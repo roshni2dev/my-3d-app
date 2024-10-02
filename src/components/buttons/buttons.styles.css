@@ -1,0 +1,24 @@
+.button-group{
+    position: absolute; 
+    top: 10px; 
+    left: 50%; 
+    transform: translate(-50%);
+    z-index: 1 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 1px solid #4e7c8d;
+    background: #4e7c8d;
+    cursor: pointer;
+}
+.button:hover{
+    background:#5a90a4;
+}
+.button:not(:last-child){
+    margin-right: 30px;
+}
