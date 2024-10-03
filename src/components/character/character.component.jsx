@@ -8,19 +8,20 @@ const Character = ({ animationIndex }) => {
     const mixer = useRef(new AnimationMixer(scene));
 
     useEffect(() => {
-        const action = mixer.current.clipAction(animations[animationIndex]);
-        action.reset().play();
-
-        return () => {
-            mixer.current.stopAllAction();
-        };
+      const action = mixer.current.clipAction(animations[animationIndex]);
+      action.reset().play();
+  
+      return () => {
+        mixer.current.stopAllAction();
+      };
     }, [animationIndex, animations]);
-
+  
     useFrame((state, delta) => {
-        mixer.current.update(delta);
+      mixer.current.update(delta);
     });
-
+  
     return <primitive object={scene} />;
-};
+  };
 
 export default Character;
+
