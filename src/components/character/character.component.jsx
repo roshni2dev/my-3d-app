@@ -6,6 +6,7 @@ import { AnimationMixer } from 'three';
 const Character = ({ animationIndex }) => {
     const { scene, animations } = useGLTF('/models/woman.gltf'); 
     const mixer = useRef(new AnimationMixer(scene));
+    const ref = useRef();
 
     useEffect(() => {
       const action = mixer.current.clipAction(animations[animationIndex]);
@@ -19,8 +20,14 @@ const Character = ({ animationIndex }) => {
     useFrame((state, delta) => {
       mixer.current.update(delta);
     });
+
+    useFrame(() => {
+        if (ref.current) {
+          ref.current.rotation.y += 0.06; 
+        }
+      });
   
-    return <primitive object={scene} />;
+    return <primitive ref={ref} object={scene} />;
   };
 
 export default Character;
