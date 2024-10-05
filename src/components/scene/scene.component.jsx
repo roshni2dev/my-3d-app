@@ -22,7 +22,7 @@ const Scene = ({ animationIndex }) => {
             <directionalLight position={[5, 5, 5]} intensity={1} />
             <AutoRotateCamera />
             <Character animationIndex={animationIndex} />
-            <OrbitControls enableZoom={false} />
+            <OrbitControls autoRotate autoRotateSpeed={2} />
             {/* <OrbitControls ref={orbitControlsRef} minPolarAngle={angleToRadians(60)} maxPolarAngle={angleToRadians(80)} />
             <PerspectiveCamera makeDefault position={[0, 1, 5]} />
             <directionalLight

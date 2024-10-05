@@ -21,11 +21,11 @@ const Character = ({ animationIndex }) => {
       mixer.current.update(delta);
     });
 
-    useFrame(() => {
-        if (ref.current) {
-          ref.current.rotation.y += 0.02; 
-        }
-      });
+    // useFrame(() => {
+    //     if (ref.current) {
+    //       ref.current.rotation.y += 0.02; 
+    //     }
+    //   });
   
     return <primitive ref={ref} object={scene} />;
   };
