@@ -23,7 +23,7 @@ const Character = ({ animationIndex }) => {
 
     useFrame(() => {
         if (ref.current) {
-          ref.current.rotation.y += 0.06; 
+          ref.current.rotation.y += 0.02; 
         }
       });
   
